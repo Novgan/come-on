@@ -6,6 +6,7 @@
         "build": "next build",
         "dev": "next dev",
         "lint": "next lint && npm run lint:types",
+        "lint:types": "tsc",
         "start": "next start"
     },
     "dependencies": {

@@ -1,4 +1,3 @@
-import Footer from "@/components/Layouts/Footer/Footer";
 import WorkoutsList from "@/components/WorkoutsList/WorkoutsList";
 import React from "react";
 
