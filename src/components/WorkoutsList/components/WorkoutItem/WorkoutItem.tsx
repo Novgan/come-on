@@ -1,6 +1,6 @@
 const WorkoutItem = () => {
     return (
-        <li className="relative min-w-[calc(50%-12px)] p-6 flex flex-col gap-y-6 group/workout cursor-default snap-normal snap-end">
+        <li className="relative min-w-full md:min-w-[calc(50%-12px)] p-6 flex flex-col gap-y-6 group/workout cursor-default snap-normal snap-end">
             <img
                 src="/images/test.jpg"
                 className="absolute -z-10 w-full h-full object-cover left-0 top-0 ease-in duration-300 group-hover/workout:blur-sm"

@@ -5,7 +5,7 @@ const Description = () => {
     return (
         <div className="h-screen">
             <h1 className="text-center font-bold text-4xl">Чому ми?</h1>
-            <ul className="grid grid-cols-2 gap-12">
+            <ul className="grid md:grid-cols-2 gap-12 grid-cols-1">
                 <DescriptionItem
                     title="Зручне розташування"
                     img={<ChevronLeftIcon className="w-8 h-8 stroke-black stroke-2 shrink-0" />}
