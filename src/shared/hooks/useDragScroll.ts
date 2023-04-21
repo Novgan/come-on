@@ -1,10 +1,8 @@
-import { MouseEvent, RefObject, useMemo, useState } from "react";
+import { RefObject, useMemo } from "react";
 import useIsInViewport from "./useIsInViewport";
 import useMount from "./useMount";
 
 const useDragScroll = (parentRef: RefObject<Element | null>) => {
-    const [isScrolling, setIsScrolling] = useState(false);
-    const [clientX, setClientX] = useState(0);
     const parentElement = parentRef.current;
 
     useMount();
@@ -21,46 +19,13 @@ const useDragScroll = (parentRef: RefObject<Element | null>) => {
     }, [isFirstElementFullInView, isLastElementFullInView]);
 
     if (!isScrollable) {
-        return { isFirstElementInView, isLastElementInView, isScrollable, isScrolling };
+        return { isFirstElementInView, isLastElementInView, isScrollable };
     }
-
-    const onMouseDown = (event: MouseEvent<Element>) => {
-        event.preventDefault();
-        event.stopPropagation();
-        setIsScrolling(true);
-        setClientX(event.clientX);
-    };
-
-    const onMouseUp = (event: MouseEvent<Element>) => {
-        event.preventDefault();
-        event.stopPropagation();
-        setIsScrolling(false);
-    };
-
-    const onMouseMove = (event: MouseEvent<Element>) => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (isScrolling && parentElement) {
-            parentElement.scrollLeft -= event.clientX - clientX;
-            setClientX(event.clientX);
-        }
-    };
-
-    const onMouseLeave = () => {
-        if (!isScrolling) return;
-
-        setIsScrolling(false);
-    };
 
     return {
         isFirstElementInView,
         isLastElementInView,
         isScrollable,
-        isScrolling,
-        onMouseDown,
-        onMouseUp,
-        onMouseMove,
-        onMouseLeave,
     };
 };
 

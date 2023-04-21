@@ -1,11 +1,11 @@
 import { useRef } from "react";
-import WorkoutItem from "./components/WorkoutItem/WorkoutItem";
 import useDragScroll from "@/shared/hooks/useDragScroll";
 import { IconButton } from "../uiKit/Button/Button";
 import ChevronLeftIcon from "../uiKit/Icons/ChevronLeftIcon";
 import ChevronRightIcon from "../uiKit/Icons/ChevronRightIcon";
+import CoachItem from "./components/CoachItem";
 
-const WorkoutsList = () => {
+const CoachesList = () => {
     const tabsListRef = useRef<HTMLUListElement>(null);
 
     const { isFirstElementInView, isLastElementInView, isScrollable: isTabsScrollable } = useDragScroll(tabsListRef);
@@ -23,8 +23,8 @@ const WorkoutsList = () => {
     };
 
     return (
-        <div className="h-screen grid grid-rows-[auto_1fr_auto] gap-y-5">
-            <h1 className="text-xl font-bold">Workouts</h1>
+        <div className="h-screen grid grid-rows-[auto_1fr_auto] auto-rows-auto gap-y-5">
+            <h1 className="text-xl font-bold">Coaches</h1>
             <div className="grid grid-cols-[auto_1fr_auto]">
                 <div className="self-center">
                     <IconButton
@@ -35,15 +35,13 @@ const WorkoutsList = () => {
                     </IconButton>
                 </div>
                 <ul ref={tabsListRef} className="flex gap-x-6 overflow-y-scroll hide-scrollbar snap-x">
-                    <WorkoutItem />
-                    <WorkoutItem />
-                    <WorkoutItem />
-                    <WorkoutItem />
-                    <WorkoutItem />
-                    <WorkoutItem />
-                    <WorkoutItem />
-                    <WorkoutItem />
-                    <WorkoutItem />
+                    <CoachItem />
+                    <CoachItem />
+                    <CoachItem />
+                    <CoachItem />
+                    <CoachItem />
+                    <CoachItem />
+                    <CoachItem />
                 </ul>
                 <div className="self-center">
                     <IconButton
@@ -61,4 +59,4 @@ const WorkoutsList = () => {
     );
 };
 
-export default WorkoutsList;
+export default CoachesList;

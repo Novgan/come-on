@@ -1,10 +1,17 @@
-import React from "react";
+import Link from "next/link";
+import React, { FC, ReactNode } from "react";
 
-const Menu = () => {
+const Menu: FC<{ children: ReactNode }> = ({ children }) => {
     return (
-        <aside className={"absolute h-menu z-40"}>
-            <button className="text-black bg-sky-500 dark:bg-green-500 dark:text-white">TOGGLE THEME</button>
-        </aside>
+        <>
+            <nav className="flex gap-x-5">
+                <span>Logo</span>
+                <Link href={"#"}>Розклад</Link>
+                <Link href={"#"}>Тренування</Link>
+                <Link href={"#"}>Ціни</Link>
+            </nav>
+            {children}
+        </>
     );
 };
 
