@@ -3,7 +3,7 @@ import DescriptionItem from "./components/DescriptionItem/DescriptionItem";
 
 const Description = () => {
     return (
-        <div className="h-screen">
+        <div className="min-h-screen">
             <h1 className="text-center font-bold text-4xl">Чому ми?</h1>
             <ul className="grid md:grid-cols-2 gap-12 grid-cols-1">
                 <DescriptionItem

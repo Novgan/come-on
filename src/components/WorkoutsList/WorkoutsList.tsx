@@ -23,7 +23,7 @@ const WorkoutsList = () => {
     };
 
     return (
-        <div className="h-screen grid grid-rows-[auto_1fr_auto] gap-y-5">
+        <div className="min-h-screen grid grid-rows-[auto_1fr_auto] gap-y-5">
             <h1 className="text-xl font-bold">Workouts</h1>
             <div className="grid grid-cols-[auto_1fr_auto]">
                 <div className="self-center">
