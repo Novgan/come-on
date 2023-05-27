@@ -1,11 +1,19 @@
-import { FC, ReactNode } from "react";
+import Location from "@/components/Location/Location";
 
-const Footer: FC<{ children: ReactNode }> = ({ children }) => {
+const Footer = () => {
     return (
-        <>
-            {children}
-            <footer>footer</footer>
-        </>
+        <footer className="px-5 grid md:grid-cols-3 gap-5 justify-items-center">
+            <div>
+                <Location />
+            </div>
+            <div>
+                <div>PRIVACY POLICY</div>
+                <div>TERMS OF USE</div>
+                <div>RETURN AND REFUND</div>
+                <div>LEGAL INFORMATION</div>
+            </div>
+            <div>asd</div>
+        </footer>
     );
 };
 
