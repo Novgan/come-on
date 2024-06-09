@@ -5,6 +5,5 @@
     "trailingComma": "es5",
     "printWidth": 120,
     "endOfLine": "lf",
-    "arrowParens": "avoid",
-    "plugins": ["prettier-plugin-pkg"]
+    "arrowParens": "avoid"
 }
